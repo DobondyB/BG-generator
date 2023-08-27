@@ -14,5 +14,14 @@ function setGradient() {
      css.textContent = body.style.background + ";";
 }
 
+function randomizeColors() { // Új függvény a véletlenszerű színekhez
+    var randomColor1 = "#" + Math.floor(Math.random()*16777215).toString(16);
+    var randomColor2 = "#" + Math.floor(Math.random()*16777215).toString(16);
+    color1.value = randomColor1;
+    color2.value = randomColor2;
+    setGradient(); // Hívjuk meg a setGradient függvényt az új színek alkalmazásához
+}
+
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
+randomizeButton.addEventListener("click", randomizeColors); // Hozzáadjuk a gombhoz az eseménykezelőt
